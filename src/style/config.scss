@@ -1,0 +1,74 @@
+@mixin default {
+  background: none;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+@mixin transition {
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}
+
+@mixin flex($align, $justify, $direction) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin zindex($pos, $index) {
+  position: $pos;
+  z-index: $index;
+}
+
+@mixin positions($pos, $top, $bottom, $left, $right, $width, $height) {
+  content: "";
+  position: $pos;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+  width: $width;
+  height: $height;
+}
+
+@mixin width($width, $height, $background, $colors, $radius, $padding) {
+  width: $width;
+  height: $height;
+  background: $background;
+  color: $colors;
+  border-radius: $radius;
+  padding: $padding;
+}
+
+@mixin pa_ma($padding, $marign) {
+  padding: $padding;
+  margin: $marign;
+}
+@mixin shadow($shadow) {
+  box-shadow: $shadow;
+}
+@mixin grid($columns, $gap) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-gap: $gap;
+}
+@mixin media-md {
+  @media screen and (max-width: $tab) {
+    @content;
+  }
+}
+@mixin media-sm {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}

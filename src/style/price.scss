@@ -1,0 +1,70 @@
+.price {
+  background-color: $blue;
+  color: $white;
+  @include pa_ma($xl-6 0 $large 0, $xl-6 0 0 0);
+  p {
+    color: $white;
+  }
+  .content {
+    @include grid(repeat(3, 1fr), 30px);
+    max-width: 80%;
+    margin: auto;
+    .box {
+      padding: $xl-4;
+      border-radius: 10px;
+    }
+    .box:nth-child(2) {
+      background: #0a2b52;
+      position: relative;
+      overflow: hidden;
+      &::after {
+        @include positions(absolute, 20px, none, none, -35px, 135px, auto);
+        content: "POPULAR";
+        background: #bd3f99;
+        transform: rotate(45deg);
+        font-size: 15px;
+        padding: 5px;
+        text-align: center;
+      }
+    }
+
+    h1 {
+      font-size: $xl-6;
+      position: relative;
+      span {
+        font-size: $lg;
+        @include positions(absolute, 10px, none, -10px, none, none, none);
+      }
+      label {
+        font-size: $md;
+        color: $text;
+      }
+    }
+    p {
+      color: $text;
+    }
+    button {
+      @include width(200px, 50px, linear-gradient(90deg, #ff4267 40%, #ff4b2e 100%), $white, 40px, none);
+      margin: 50px 0;
+    }
+
+    ul {
+      li {
+        margin-top: 30px;
+        i {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  $colors: #2acb39, #ffa904, #ff41be;
+  @for $i from 1 through 3 {
+    .box:nth-child(#{length($colors)}n + #{$i}) {
+      h3 {
+        color: lighten(nth($colors, random(length($colors))), 20%);
+        font-size: $xl;
+      }
+    }
+  }
+}

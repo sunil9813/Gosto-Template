@@ -1,0 +1,100 @@
+@include media-md {
+  header {
+    .toggle {
+      display: block;
+      margin-right: 230%;
+      .close {
+        @include positions(absolute, 20px, none, 30%, none, 50px, 50px);
+        @include width(40px, 40px, $white, $primary, 50%, 8px);
+        z-index: 9999;
+      }
+    }
+    .center {
+      ul {
+        display: none;
+      }
+
+      .mobile-nav {
+        display: block;
+        @include positions(absolute, 0, none, -50px, none, none, none);
+        @include width(300px, 100vh, $blue, $white, 0, 0);
+        padding: $large 0;
+        li {
+          margin-top: $xl;
+          a {
+            color: $white;
+            margin-bottom: $md;
+            font-size: $xl-2;
+          }
+        }
+      }
+    }
+    .right_user,
+    .right_search {
+      display: none;
+    }
+  }
+
+  .hero {
+    @include width(90%, auto, 0, 0, 0, 0);
+    @include pa_ma(20% 0 0 0, none);
+
+    h1 {
+      font-size: $xl;
+      span {
+        font-size: $xl-3;
+      }
+    }
+    .search {
+      @include width(100%, none, $white, $dark, 40px, 10px);
+      input {
+        width: 70%;
+      }
+    }
+  }
+
+  // card
+  .cards {
+    @include grid(repeat(3, 1fr), 30px);
+  }
+  .topproduct,
+  .product {
+    .product_items {
+      @include grid(repeat(2, 1fr), 30px);
+    }
+  }
+  .topproduct {
+    .head {
+      @include flex(center, center, column);
+    }
+    .category {
+      @include flex(center, space-between, row);
+      width: 100%;
+      button {
+        margin: 20px;
+      }
+    }
+  }
+  .banner {
+    .posts {
+      @include grid(repeat(1, 1fr), 30px);
+    }
+  }
+  .price {
+    .content {
+      @include grid(repeat(1, 1fr), 30px);
+      place-items: center;
+    }
+  }
+  .customer {
+    .content {
+      @include grid(repeat(2, 1fr), 30px);
+    }
+  }
+  .blog {
+    .posts {
+      @include grid(repeat(1, 1fr), 30px);
+      place-items: center;
+    }
+  }
+}

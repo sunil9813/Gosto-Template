@@ -1,0 +1,61 @@
+header {
+  @include pa_ma($md $xl-2, none);
+  box-shadow: rgba(0, 0, 0, 0.05) 1.95px 1.95px 2.6px;
+
+  .container {
+    @include flex(center, space-between, center);
+  }
+  nav {
+    @extend .container;
+  }
+  .toggle {
+    display: none;
+  }
+  .left {
+    @include pa_ma($sm 0 0 0, none);
+
+    img {
+      width: 100px;
+    }
+  }
+  .heIcon {
+    font-size: $lg;
+    color: $blue;
+  }
+  .center {
+    ul {
+      @extend .container;
+      @include pa_ma(none, 0 0 0 $xl-5);
+      li {
+        @include pa_ma(none, 0 0 0 $xl-2);
+        a {
+          text-transform: uppercase;
+          font-size: $md;
+        }
+      }
+    }
+  }
+  .right {
+    @extend .container;
+    &_search {
+      @extend .container;
+      @include width(none, $xl-5, $white, none, 50px, $md);
+      @include shadow(-5px 9px 20px 0px rgb(23 45 89 / 3%));
+
+      input {
+        @include width(80%, 100%, none, none, none, $md);
+      }
+    }
+    &_user {
+      .heIcon {
+        @include pa_ma(none, 0 $md);
+      }
+    }
+  }
+}
+header.active {
+  @include positions(sticky, 0, none, 0, none, none, 100%);
+  box-shadow: 0 0 4px 0 rgb(115 115 115 / 20%);
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.8);
+}

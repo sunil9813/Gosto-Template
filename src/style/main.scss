@@ -1,0 +1,134 @@
+@import "reset";
+@import "varibale";
+@import "config";
+@import "header";
+@import "hero";
+@import "card";
+@import "TopProduct";
+@import "price";
+@import "customer";
+@import "blog";
+@import "responsive";
+
+body {
+  background: $light;
+  font-family: "Poppins", sans-serif;
+}
+a {
+  @include default;
+  font-weight: weight(medium);
+  color: $dark;
+  @include transition;
+  &:hover {
+    color: $primary;
+  }
+}
+input,
+button,
+li {
+  @include default;
+}
+
+.button {
+  @include width(150px, 40px, linear-gradient(90deg, #ff4267 40%, #ff4b2e 100%), $white, 40px, none);
+  @include flex(center, center, center);
+  .heIcon {
+    margin: 0 $sm;
+    color: $white;
+  }
+}
+section {
+  @include pa_ma($md $xl-2, none);
+}
+
+p {
+  color: $blue;
+  opacity: 0.7;
+  font-size: $md;
+}
+.card {
+  @include width(none, none, $white, none, 10px, 20px);
+  background: $white;
+  @include transition;
+  &:hover {
+    @include shadow(-5px 9px 20px 0px rgb(23 45 89 / 3%));
+  }
+}
+.heading {
+  text-align: center;
+  @include pa_ma(0, $xl-4 0);
+  h2 {
+    font-size: $xl-2;
+  }
+}
+.product_items {
+  @include grid(repeat(4, 1fr), 30px);
+  .box {
+    cursor: pointer;
+    .img {
+      position: relative;
+      img {
+        @include width(100%, 100%, none, none, 20px, none);
+      }
+    }
+    h3 {
+      font-size: 16px;
+    }
+    p {
+      font-style: italic;
+      margin: 5px 0;
+    }
+    .button {
+      @include width($xl-6, $xl-6, $white, $blue, 50%, none);
+      font-size: $lg;
+      @include transition;
+      margin: 5px;
+
+      &:hover {
+        background: $primary;
+        color: $white;
+      }
+    }
+    .overlay {
+      @include flex(center, center, center);
+      @include positions(absolute, none, $xl-4, 0, none, 100%, auto);
+      opacity: 0;
+      @include transition;
+      transform: translateY(0);
+    }
+    &:hover .overlay {
+      opacity: 1;
+      transform: translateY(-30%);
+    }
+  }
+}
+
+.posts {
+  @include grid(repeat(2, 1fr), 30px);
+  margin-top: $xl-6;
+  .post {
+    .content {
+      position: relative;
+      .text {
+        @include positions(absolute, 0, none, 0, none, 100%, 100%);
+        padding: $xl-3;
+        color: $white;
+        h2 {
+          margin: 5px 0;
+        }
+        p {
+          color: $white;
+          margin: 15px 0;
+        }
+      }
+    }
+  }
+}
+footer {
+  text-align: center;
+  @include pa_ma($xl-2, $large 0 0 0);
+  background: $dark;
+  p {
+    color: $light;
+  }
+}

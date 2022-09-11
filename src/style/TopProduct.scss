@@ -1,0 +1,15 @@
+.topproduct {
+  .heading {
+    text-align: left;
+  }
+  .head {
+    @include flex(center, space-between, center);
+  }
+  .category {
+    @extend .head;
+    width: 50%;
+    button {
+      margin-left: 20px;
+    }
+  }
+}

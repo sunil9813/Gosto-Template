@@ -1,0 +1,36 @@
+.customer {
+  .content {
+    @include grid(repeat(3, 1fr), 30px);
+    text-align: center;
+    .card {
+      margin-top: $xl-3;
+      position: relative;
+
+      button {
+        @include width(65px, 65px, $white, $text, 40px, none);
+        @include shadow(-9px 18px 27px 0px rgb(23 45 89 / 10%));
+        @include positions(absolute, -40px, none, 40%, none, none, none);
+        font-size: 20px;
+        @include transition;
+        &:hover {
+          background: $primary;
+          color: $white;
+        }
+      }
+      p {
+        font-size: $md;
+        line-height: 2;
+        margin-top: $xl-3;
+      }
+      h3 {
+        color: $blue;
+        font-size: $lg;
+        margin: $lg 0;
+      }
+      span {
+        color: $text;
+        font-size: $md;
+      }
+    }
+  }
+}
