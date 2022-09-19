@@ -4,9 +4,9 @@
       display: block;
       margin-right: 230%;
       .close {
-        @include positions(absolute, 20px, none, 30%, none, 50px, 50px);
+        @include positions(absolute, 20px, none, 40%, none, 50px, 50px);
         @include width(40px, 40px, $white, $primary, 50%, 8px);
-        z-index: 9999;
+        z-index: 999999;
       }
     }
     .center {
@@ -17,12 +17,14 @@
       .mobile-nav {
         display: block;
         @include positions(absolute, 0, none, -50px, none, none, none);
-        @include width(300px, 100vh, $blue, $white, 0, 0);
+        @include width(400px, 100vh, $light, $white, 0, 0);
         padding: $large 0;
+        z-index: 99999;
+
         li {
           margin-top: $xl;
           a {
-            color: $white;
+            color: $dark;
             margin-bottom: $md;
             font-size: $xl-2;
           }
@@ -38,7 +40,9 @@
   .hero {
     @include width(90%, auto, 0, 0, 0, 0);
     @include pa_ma(20% 0 0 0, none);
-
+    &::after {
+      width: 100%;
+    }
     h1 {
       font-size: $xl;
       span {

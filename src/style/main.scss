@@ -9,6 +9,8 @@
 @import "customer";
 @import "blog";
 @import "responsive";
+@import "details";
+@import "searchItem";
 
 body {
   background: $light;
@@ -130,5 +132,41 @@ footer {
   background: $dark;
   p {
     color: $light;
+  }
+}
+/*.product,
+.topproduct {
+  position: relative;
+}*/
+.modelOpen {
+  @include positions(absolute, -50px, none, 0, none, 100%, 130vh);
+  z-index: 999999;
+  .onClickImage {
+    position: relative;
+    @include positions(fixed, 0px, none, 0, none, 100%, 110vh);
+    @include flex(center, center, center);
+
+    img {
+      @include flex(center, center, center);
+      width: 600px;
+      height: 600px;
+      z-index: 99999;
+    }
+    .button {
+      @include positions(absolute, 13%, none, none, 29%, none, none);
+      @include width(40px, 40px, linear-gradient(90deg, #ff4267 40%, #ff4b2e 100%), $white, 40px, none);
+      z-index: 999999;
+    }
+    &::after {
+      content: "";
+      @include positions(absolute, -50px, none, 0, none, 100%, 110vh);
+      background: rgba(#000000, 0.8);
+    }
+  }
+}
+.modelClose {
+  img,
+  .button {
+    display: none;
   }
 }

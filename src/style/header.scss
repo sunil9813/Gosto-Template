@@ -51,6 +51,54 @@ header {
         @include pa_ma(none, 0 $md);
       }
     }
+    .showCart {
+      background: $white;
+      @include positions(absolute, 11%, none, none, 20px, 450px, auto);
+      @include shadow(rgba(0, 0, 0, 0.15) 0px 2px 8px);
+      @include pa_ma(20px 0, 0);
+      border-radius: 5px;
+      z-index: 999;
+
+      .empty {
+        @include flex(center, space-between, center);
+        @include pa_ma(0 20px, 0);
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+    .details {
+      &_title {
+        @include flex(center, space-between, center);
+        border-bottom: 2px solid rgba($dark, $alpha: 0.2);
+        padding-bottom: 7px;
+      }
+      &_content {
+        @include flex(center, space-between, center);
+        margin: 20px 0;
+        &_img {
+          img {
+            @include width(80px, 80px, red, none, 50%, none);
+            object-fit: cover;
+          }
+        }
+        p {
+          margin-bottom: 5px;
+        }
+        i {
+          color: $primary;
+          font-size: 30px;
+          cursor: pointer;
+        }
+      }
+      &_total {
+        padding-top: 7px;
+      }
+    }
+    .hideCart {
+      display: none;
+    }
   }
 }
 header.active {
@@ -58,4 +106,8 @@ header.active {
   box-shadow: 0 0 4px 0 rgb(115 115 115 / 20%);
   z-index: 9999;
   background: rgba(255, 255, 255, 0.8);
+
+  .showCart {
+    @include positions(absolute, 110%, none, none, 20px, 450px, auto);
+  }
 }

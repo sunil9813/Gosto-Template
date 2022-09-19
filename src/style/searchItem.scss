@@ -1,0 +1,13 @@
+.searchItems {
+  padding: 0;
+  .product_items {
+    @include grid(repeat(3, 1fr), 30px);
+    margin-top: -25px;
+    background: $white;
+    border-radius: 0 0 30px 30px;
+    width: 100%;
+    .box {
+      padding: 20px;
+    }
+  }
+}

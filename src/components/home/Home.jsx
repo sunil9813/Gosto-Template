@@ -1,6 +1,7 @@
 import React from "react"
 import { Banner } from "./banner/Banner"
 import { Blog } from "./blog/Blog"
+import { Details } from "./details/Details"
 import { Card } from "./Hero/Card"
 import { Hero } from "./Hero/Hero"
 import { Price } from "./price/Price"

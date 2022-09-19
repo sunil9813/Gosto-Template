@@ -1,0 +1,80 @@
+/*---------stpe used in our project-------------*/
+Step 1: 
+  -> Create action file 
+     i.e type create and data send with the help of payload then goes to reudcer
+  -> Create reducer file 
+     in reducer file check type if type is valid then add data into card
+  -> Create main file
+     with the help of combineReducers , combine cartReducer because in future if we want to make multiple reudcer then it help
+  -> Create store file
+     createStore and store the root  
+  -> then in app or index file wrap with prvoider and pass store 
+
+Step 2: 
+  -> go to header file and getdata using useSelector
+     useSelector() => from reudcer fetch or get value and it use like useContext
+     useSelector() => yasale chai reudcer bata state ko value lai get garna help garxa 
+  
+Step 3: 
+  -> go to product page to add items using onClick 
+     func lai tigger garnu xa bhane chai dispatch used hunxa 
+     
+Step 4: 
+  -> 
+Step 3: 
+  -> 
+
+
+
+
+
+
+/* ------------- base concept of redux
+Step 1 : 
+  -> import createStore  
+  -> make variable and store (reducer ,initialStore) 
+  -> make function of reducer() 
+  -> make intialStore = {}
+  -> make action type 
+  -> 
+*/
+//stpe 1 :
+import { createStore } from "redux"
+import { DECREASE, INCREASE } from "./controller/action"
+
+/*--- step 1.3 ---*/
+// initial store
+const initialStore = {
+  count: 0,
+  name: "sunil",
+}
+/*--- step 1.2 ---*/
+// reducer
+function reducer(state, action) {
+  console.log({ state, action })
+  if (action.type === DECREASE) {
+    //state.count = state.count - 1 -> wrong way
+    //return { count: state.count - 1 } // -> right way
+    return { ...state, count: state.count - 1 }
+  }
+  if (action.type === INCREASE) {
+    return { ...state, count: state.count + 1 }
+  }
+
+  return state
+}
+/*--- step 1.1 ---*/
+const store = createStore(reducer, initialStore)
+// reducer - function that used to update store
+store.dispatch({ type: DECREASE })
+store.dispatch({ type: INCREASE })
+console.log(store.getState())
+
+export const App = () => {
+  //cart setup
+  return (
+    <>
+      <Pages cart={store.getState()} />
+    </>
+  )
+}

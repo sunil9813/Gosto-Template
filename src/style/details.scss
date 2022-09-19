@@ -1,0 +1,62 @@
+article {
+  .details {
+    &_title {
+      margin: 30px 0;
+    }
+    &_content {
+      @include flex(none, none, none);
+      &_img {
+        @include width(50%, 100%, none, none, none, none);
+        margin-right: 50px;
+        img {
+          @include width(100%, 100%, none, none, none, none);
+        }
+      }
+      &_detail {
+        width: 50%;
+        h1 {
+          font-size: 30px;
+        }
+        .rating {
+          color: $primary;
+          margin: 20px 0;
+          label {
+            margin-left: 0 15px;
+            color: $text;
+            font-size: $md;
+          }
+        }
+        .qty {
+          margin-top: 20px;
+          @include flex(center, none, center);
+          .count {
+            @include flex(center, space-between, center);
+            border: 2px solid rgba(#000000, 0.08);
+            padding: 10px;
+            @include width(120px, none, none, none, 5px, none);
+            span {
+              font-weight: 600;
+            }
+            button {
+              font-size: 18px;
+              opacity: 0.8;
+            }
+          }
+          .button {
+            @include width(40%, auto, $blue, $white, 0, 15px);
+            margin-left: 30px;
+          }
+        }
+        .desc {
+          h4 {
+            margin-top: 40px;
+          }
+          p {
+            color: $dark;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
